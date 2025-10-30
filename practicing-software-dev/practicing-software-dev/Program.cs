@@ -6,8 +6,8 @@
         {
             Console.WriteLine("Hello, World!");
 
-            //initialize Queue "Orders"
-
+            //initialize Queue "Orders" - Kaylah
+            Queue<> OrderQueue = new Queue<>();
 
             //welcome text
 
@@ -32,7 +32,7 @@
         }
     }
 
-    //2nd internal class Order - make one object for every order they make, store in Queue
+    //2nd internal class Order - make one object for every order they make, store in Queue - Meghan
     internal class Order
     {
 
