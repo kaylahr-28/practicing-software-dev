@@ -35,6 +35,20 @@
     //2nd internal class Order - make one object for every order they make, store in Queue
     internal class Order
     {
+        string personWhoOrdered;
+        string itemName;
+        int quantity;
 
+        public Order(string personWhoOrdered, string itemName, int quantity)
+        {
+            this.personWhoOrdered = personWhoOrdered;
+            this.itemName = itemName;
+            this.quantity = quantity;
+        }
+
+        public string Make()
+        {
+            return "Here is the " + quantity + " orders of " + itemName + " for " + personWhoOrdered;
+        }
     }
 }
