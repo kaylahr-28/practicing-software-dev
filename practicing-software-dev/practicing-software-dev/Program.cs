@@ -7,7 +7,7 @@
             Console.WriteLine("Hello, World!");
 
             //initialize Queue "Orders" - Kaylah
-            Queue<> OrderQueue = new Queue<>();
+            Queue<Order> OrderQueue = new Queue<>();
 
             //welcome text
 
