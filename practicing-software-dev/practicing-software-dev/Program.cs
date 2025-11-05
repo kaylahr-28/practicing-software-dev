@@ -4,31 +4,44 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
-
             //initialize Queue "Orders" - Kaylah
-            Queue<Order> OrderQueue = new Queue<>();
+            Queue<Order> OrderQueue = new Queue<Order>();
 
             //welcome text
+            Console.WriteLine("Welcome to our restaurant!");
+
+            //while-loop: while user input != empty line, "what can i get you" , prompt for dish name, quantity, who it's for
+            do
+            {
+                Console.WriteLine("What dish would you like?");
 
 
-            //while-loop: while user input != empty line, "what can i get you" , prompt for dish name, size/quantity, who it's for etc.
+                Console.WriteLine("How many would you like?");
 
 
-                //for each line of user input, make sure its correct numbers/type/etc
+                Console.WriteLine("What is the name for the order?");
 
-                //make Order object for each user input of an order, add to Queue
+
+            } while ();
+
+            //for each line of user input, make sure its correct numbers/type/etc
+
+            //make Order object for each user input of an order, add to Queue
 
             //"kitchen making orders yay"
-
+            Console.WriteLine("We'll be right back with your orders!");
 
             //for loop: dequeues to "make" orders
+            for ()
+            {
 
+            }
 
             //print " heres your order (dish, quantity, name) yippiee"
 
 
             //"enjoy!"
+            Console.WriteLine("We hope you enjoy your meal!");
         }
     }
 
