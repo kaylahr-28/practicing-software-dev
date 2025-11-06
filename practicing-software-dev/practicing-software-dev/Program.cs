@@ -1,4 +1,6 @@
-﻿namespace practicing_software_dev
+﻿using System.Xml.Linq;
+
+namespace practicing_software_dev
 {
     internal class Restaurant
     {
@@ -6,6 +8,9 @@
         {
             //initialize Queue "Orders" - Kaylah
             Queue<Order> OrderQueue = new Queue<Order>();
+
+            string name, item;
+            int quantity;
 
             //welcome text
             Console.WriteLine("Welcome to our restaurant!");
@@ -21,12 +26,14 @@
 
                 Console.WriteLine("What is the name for the order?");
 
+                //for each line of user input, make sure its correct numbers/type/etc
 
+                //make Order object for each user input of an order, add to Queue - Vicky
+                Order order = new Order(name, item, quantity);
+                OrderQueue.Enqueue(order);
             } while ();
 
-            //for each line of user input, make sure its correct numbers/type/etc
-
-            //make Order object for each user input of an order, add to Queue
+            
 
             //"kitchen making orders yay"
             Console.WriteLine("We'll be right back with your orders!");
