@@ -11,6 +11,8 @@ namespace practicing_software_dev
 
             string name, item;
             int quantity;
+            bool ordering = true;
+            string yesOrNo;
 
             //welcome text
             Console.WriteLine("Welcome to our restaurant!");
@@ -18,20 +20,41 @@ namespace practicing_software_dev
             //while-loop: while user input != empty line, "what can i get you" , prompt for dish name, quantity, who it's for
             do
             {
-                Console.WriteLine("What dish would you like?");
+                item = Console.ReadLine("What dish would you like?");
+
+               try
+               {
+                    string quantityInput = Console.ReadLine("How many would you like?");
+                    quantity = int.Parse(input);
+                }
+
+               catch (FormatException ex)
+               {
+                    Console.WriteLine("Please enter an integer");
+               }
 
 
-                Console.WriteLine("How many would you like?");
+                name = Console.ReadLine("What is the name for the order?");
 
+               
 
-                Console.WriteLine("What is the name for the order?");
+                ordering = Console.ReadLine("Would you like to keep ordering? Please type 'true' to keep ordering and 'false' to stop.");
+                try
+                {
+                    string orderInput = Console.ReadLine("Would you like to keep ordering? Please type 'true' to keep ordering and 'false' to stop.");
+                    quantity = int.Parse(input);
+                }
 
-                //for each line of user input, make sure its correct numbers/type/etc
+                catch (FormatException ex)
+                {
+                    Console.WriteLine("Please type 'true' to keep ordering and 'false' to stop.");
+                }
+
 
                 //make Order object for each user input of an order, add to Queue - Vicky
                 Order order = new Order(name, item, quantity);
                 OrderQueue.Enqueue(order);
-            } while ();
+            } while (ordering);
 
             
 
