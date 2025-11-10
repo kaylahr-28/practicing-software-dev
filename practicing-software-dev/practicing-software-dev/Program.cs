@@ -10,7 +10,7 @@ namespace practicing_software_dev
             Queue<Order> OrderQueue = new Queue<Order>();
 
             string name, item;
-            int quantity;
+            int amount = 0;
             bool ordering = true;
             string yesOrNo;
 
@@ -20,12 +20,14 @@ namespace practicing_software_dev
             //while-loop: while user input != empty line, "what can i get you" , prompt for dish name, quantity, who it's for
             do
             {
-                item = Console.ReadLine("What dish would you like?");
+                Console.WriteLine("What dish would you like?");
+                item = Console.ReadLine();
 
                try
                {
-                    string quantityInput = Console.ReadLine("How many would you like?");
-                    quantity = int.Parse(input);
+                    Console.WriteLine("How many would you like?");
+                    string quantityInput = Console.ReadLine();
+                    amount = int.Parse(quantityInput);
                 }
 
                catch (FormatException ex)
@@ -33,16 +35,14 @@ namespace practicing_software_dev
                     Console.WriteLine("Please enter an integer");
                }
 
+                Console.WriteLine("What is the name for the order?");
+                name = Console.ReadLine();
 
-                name = Console.ReadLine("What is the name for the order?");
-
-               
-
-                ordering = Console.ReadLine("Would you like to keep ordering? Please type 'true' to keep ordering and 'false' to stop.");
                 try
                 {
-                    string orderInput = Console.ReadLine("Would you like to keep ordering? Please type 'true' to keep ordering and 'false' to stop.");
-                    ordering = bool.Parse(input);
+                    Console.WriteLine("Would you like to keep ordering? Please type 'true' to keep ordering and 'false' to stop.");
+                    string orderInput = Console.ReadLine();
+                    ordering = bool.Parse(orderInput);
                 }
 
                 catch (FormatException ex)
@@ -52,7 +52,7 @@ namespace practicing_software_dev
 
 
                 //make Order object for each user input of an order, add to Queue - Vicky
-                Order order = new Order(name, item, quantity);
+                Order order = new Order(name, item, amount);
                 OrderQueue.Enqueue(order);
             } while (ordering);
 
@@ -62,12 +62,12 @@ namespace practicing_software_dev
             Console.WriteLine("We'll be right back with your orders!");
 
             //for loop: dequeues to "make" orders
-            for ()
+            while (OrderQueue.Count > 0)
             {
-
+                Order orderUp = OrderQueue.Dequeue();
+                //print " heres your order (dish, quantity, name) yippiee"
+                Console.WriteLine(orderUp.Make());
             }
-
-            //print " heres your order (dish, quantity, name) yippiee"
 
 
             //"enjoy!"
