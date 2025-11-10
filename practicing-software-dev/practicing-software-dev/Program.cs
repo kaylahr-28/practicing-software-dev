@@ -42,7 +42,7 @@ namespace practicing_software_dev
                 try
                 {
                     string orderInput = Console.ReadLine("Would you like to keep ordering? Please type 'true' to keep ordering and 'false' to stop.");
-                    quantity = int.Parse(input);
+                    ordering = bool.Parse(input);
                 }
 
                 catch (FormatException ex)
