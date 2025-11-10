@@ -23,33 +23,43 @@ namespace practicing_software_dev
                 Console.WriteLine("What dish would you like?");
                 item = Console.ReadLine();
 
-               try
-               {
-                    Console.WriteLine("How many would you like?");
-                    string quantityInput = Console.ReadLine();
-                    amount = int.Parse(quantityInput);
+                bool valid = false;
+                while (!valid)
+                {
+                    try
+                    {
+                        Console.WriteLine("How many would you like?");
+                        string quantityInput = Console.ReadLine();
+                        amount = int.Parse(quantityInput);
+                        valid = true;
+                    }
+
+                    catch (FormatException ex)
+                    {
+                        Console.WriteLine("Please enter an integer");
+                    }
                 }
 
-               catch (FormatException ex)
-               {
-                    Console.WriteLine("Please enter an integer");
-               }
-
+                
                 Console.WriteLine("What is the name for the order?");
                 name = Console.ReadLine();
 
-                try
+                valid = false;
+                while (!valid)
                 {
-                    Console.WriteLine("Would you like to keep ordering? Please type 'true' to keep ordering and 'false' to stop.");
-                    string orderInput = Console.ReadLine();
-                    ordering = bool.Parse(orderInput);
-                }
+                    try
+                    {
+                        Console.WriteLine("Would you like to keep ordering? Please type 'true' to keep ordering and 'false' to stop.");
+                        string orderInput = Console.ReadLine();
+                        ordering = bool.Parse(orderInput);
+                        valid = true;
+                    }
 
-                catch (FormatException ex)
-                {
-                    Console.WriteLine("Please type 'true' to keep ordering and 'false' to stop.");
+                    catch (FormatException ex)
+                    {
+                        Console.WriteLine("Please type 'true' to keep ordering and 'false' to stop.");
+                    }
                 }
-
 
                 //make Order object for each user input of an order, add to Queue - Vicky
                 Order order = new Order(name, item, amount);
